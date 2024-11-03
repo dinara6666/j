@@ -1,0 +1,81 @@
+
+
+const.url{}
+ *{
+    
+    background-color: rgb(0, 0, 0);
+}
+
+
+.di img{
+    width: 100px;
+    
+}
+
+.ddd{
+   
+    color: aliceblue;
+    
+}
+
+.hhh{
+    color:gray;
+    float: right;
+    display: flex;
+    margin-left: 950px;
+
+    align-items: 100px;
+    box-sizing: border-box;
+    gap: 80px;
+
+}
+
+
+.button button{
+    color: gray;
+    margin-left: 900px;
+    border-radius: 30px;
+    border: solid 1px gray;
+   
+    padding-top: 20px;
+    padding-right: 45px;
+    padding-bottom: 20px;
+    padding-left: 45px;
+    margin-top: 300px;
+}
+
+
+.smart{
+    display: flex;
+}
+
+
+.smart img{
+    width: 1000px;
+    height: 100px;
+    margin-top: 501px;
+    font-size: 100px;
+
+}
+ 
+.smart h1{
+color: gray;
+margin-left: 200px;
+width: 300px;
+font-size: 20px;
+margin-top: 380px;
+
+
+
+}
+
+
+
+
+ 
+
+
+
+
+
+

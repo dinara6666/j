@@ -1,0 +1,791 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="city-name"></div>
+    <div id="temperature"></div>
+    <div id="time"></div>
+  
+
+
+
+
+    
+    <div class="app">
+        <video class="background-video" autoplay loop muted></video>
+        
+        <div class="container">
+            <div class="search-container">
+                <form id="weather-form">
+                
+                     <input type="text" id="city" placeholder="Введите город" required> 
+                     <button type="submit" class="search-button">
+                        <img src="./videos/Group 166.svg" alt="Поиск" class="search-icon">
+                    </button>
+                </form>
+
+<style>
+ .search-container img {
+    display: flex;
+    align-items: center; 
+}
+
+input {
+  
+    padding: 10px;
+    margin-right: 5px;
+    border: none; 
+    border-radius: 0; 
+    width: 300px;  
+    background-color: transparent;
+    font-size: 16px; 
+    color: #fff; 
+    outline: none; 
+}
+
+.search-button {
+    margin-left: 350px;
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.search-icon {
+    width: 20px; 
+    height: 20px; 
+}
+
+</style>
+
+
+
+
+
+
+                 <h4>Weather Details</h4>
+                 <h3>thunderstorm with light drizzle</h3>
+
+
+
+
+                 <div class="weather-details">
+                    <div class="temp-container">
+                        <span>Min:</span>
+                        <div id="temp-min" class="value-container">
+                            <span id="min-value"></span>° 
+                            <img id="min-icon" src="./videos/Vector2.svg" alt="Min Temp Icon" class="temp-icon">
+                        </div>
+                    </div>
+                    
+                    <div class="temp-container">
+                        <span>Max:</span>
+                        <div id="temp-max" class="value-container">
+                            <span id="max-value"></span>° 
+                            <img id="max-icon" src="./videos/Vector.svg" alt="Max Temp Icon" class="temp-icon">
+                        </div>
+                    </div>
+                
+                    <div class="weather-info">
+                        <span>Humidity:</span>
+                        <div id="humidity" class="value-container">
+                            <span id="humidity-value"></span>% 
+                            <img src="./videos/Vector3.svg" alt="Humidity Icon" class="info-icon">
+                        </div>
+                    </div>
+                    
+                    <div class="weather-info">
+                        <span>Clouds:</span>
+                        <div id="clouds" class="value-container">
+                            <span id="clouds-value"></span>% 
+                            <img src="./videos/Vector4.svg" alt="Clouds Icon" class="info-icon">
+                        </div>
+                    </div>
+                
+                    <div class="weather-info">
+                        <span>Wind:</span>
+                        <div id="wind" class="value-container">
+                            <span id="wind-value"></span> km/h 
+                            <img src="./videos/Vector5.svg" alt="Wind Icon" class="info-icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="hr">
+                    <hr>
+                </div>
+             
+
+
+                <style>
+                    .weather-details {
+    display: flex;
+    flex-direction: column; 
+    
+    margin-top: 40px;
+
+
+    width: Hug (354px)px;
+height: Hug (290px)px;
+top: 207px;
+left: 949px;
+gap: 30px;
+opacity: 0px;
+
+}
+
+.temp-container, .weather-info {
+
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 5px 0; 
+}
+
+.value-container {
+    display: flex;
+    align-items: center; 
+}
+
+.temp-icon, .info-icon {
+    width: 20px; 
+    height: 20px;
+    margin-left: 5px; 
+    margin-right: 50px;
+}
+
+.hr{
+    width: 371px;
+height: 50px;
+top: 531px;
+left: 949px;
+gap: 0px;
+border: 0px 0px 1px 0px;
+opacity: 0px;
+
+margin-top:70px;
+
+}
+
+                </style> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 <!-- <div class="weather-details">
+                    <div id="temp-min" class="temp-container">
+                        <span>Min: <span id="min-value"></span>°</span>
+                        <img id="min-icon" src="./videos/Vector2.svg" alt="Min Temp Icon" class="temp-icon">
+                    </div>
+                    
+                    <div id="temp-max" class="temp-container">
+                        <span>Max: <span id="max-value"></span>°</span>
+                        <img id="max-icon" src="./videos/Vector2.svg" alt="Max Temp Icon" class="temp-icon">
+                    </div>
+                
+                    <div id="humidity" class="weather-info">
+                        <span>Humidity: <span id="humidity-value"></span>%</span>
+                    </div>
+                    
+                    <div id="clouds" class="weather-info">
+                        <span>Clouds: <span id="clouds-value"></span>%</span>
+                    </div>
+                
+                    <div id="wind" class="weather-info">
+                        <span>Wind: <span id="wind-value"></span> m/s</span>
+                    </div>
+                </div>
+                
+
+                <style>
+                    .weather-details {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    color: azure; /* Цвет текста */
+}
+
+.temp-container, .weather-info {
+    display: flex;
+    align-items: center; /* Центрируем элементы по вертикали */
+    justify-content: flex-start; /* Выравниваем элементы по левому краю */
+    margin: 5px 0; /* Отступ между элементами */
+}
+
+.temp-icon, .min-value {
+    width: 20px; /* Укажите нужный размер изображения */
+    height: 20px; /* Укажите нужный размер изображения */
+    margin-left: 205px; /* Отступ между текстом и изображением */
+}
+
+                </style> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+                 <div id="temp-min" class="temp-container">
+                    <span>Min: <span id="min-value"></span>°</span>
+                    <img id="min-icon" src="./videos/Vector2.svg" alt="Min Temp Icon" class="temp-icon">
+                </div>
+                
+    
+    
+                <style>
+                    .temp-container {
+        display: flex;
+        align-items: center; /* Центрируем элементы по вертикали */
+        justify-content: flex-end; /* Выравниваем элементы по правому краю */
+        color: azure; /* Цвет текста, как в вашем коде */
+    }
+    
+    .temp-icon {
+        width: 20px; /* Укажите нужный размер изображения */
+        height: 20px; /* Укажите нужный размер изображения */
+        margin-left: 5px; /* Отступ между текстом и изображением */
+    }
+ -->
+
+</style>
+
+    
+            </div>
+            <div id="weather-info"></div>
+            <div id="error" class="error"></div>
+
+          
+
+          
+           
+       
+        </div>
+    </div>
+
+
+  </div>
+
+            
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="city-name"></div>
+    <div id="temperature"></div>
+    <div id="time"></div>
+    
+    <div class="app">
+        <video class="background-video" autoplay loop muted></video>
+        
+        <div class="container">
+
+
+            <div class="search-container">
+                <form id="weather-form">
+                    <input type="text" id="city" placeholder="Введите город" required>
+                    <button type="submit" id="search-button" aria-label="Поиск погоды">
+                        <img src="./videos/Group 166.svg" alt="Иконка поиска">
+                    </button>
+                </form>
+                <div id="error"></div>
+            </div>
+            
+            
+
+
+             <div class="search-container">
+                <form id="weather-form">
+                    <input type="text" id="city" placeholder="Введите город" required>
+                    <button type="submit" id="search-button" aria-label="Поиск погоды">
+                        <img src="./videos/Group 166.svg" alt="Иконка поиска">
+                    </button>
+                </form>
+                <div id="error"></div>
+  -->
+
+ <!-- <style>
+
+    .search-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-input {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        width: 300px;
+        background: rgba(255, 255, 255, 0.7); /* Прозрачный фон */
+        transition: border-color 0.3s;
+    }
+
+    .search-input:focus {
+        border-color: #007bff;
+    }
+
+    .search-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        margin-left: 5px;
+    }
+
+    .search-button img {
+        width: 20px; /* Размер лупы */
+        height: 20px;
+    }
+</style> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             <style>
+               
+             </style>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+ 
+
+ 
+
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="city-name"></div>
+    <div id="temperature"></div>
+ 
+    <div id="time"></div>
+    
+    <div class="app">
+        <video class="background-video" autoplay loop muted></video>
+        
+        <div class="container">
+            <div class="search-container">
+                <form id="weather-form">
+                    <input type="text" id="city" placeholder="Введите город" required>        
+                    <button type="submit">Получить погоду</button>
+                </form>
+
+                <h4>Weather Detail</h4>
+                <h3>thunderstorm with light drizzle</h3>
+                
+                <div class="additional-info">
+                    <div id="min-temperature" class="image-container">min-temperature: <img src="./videos/Vector.svg" alt="">     </div>
+                    <div id="max-temperature" class="image-container">max-temperature:    <img src="" alt="">     </div>
+                    <div id="humidity" class="image-container">Humidity: <img src="path_to_humidity_image.png" alt="Humidity"></div>
+                    <div id="cloudy" class="image-container">Cloudy: <img src="path_to_cloudy_image.png" alt="Cloudy"></div>
+                    <div id="wind" class="image-container">Wind: <img src="./videos/Vector5.svg" alt="Wind"></div>
+                </div>
+                
+
+
+            </div>
+            <div id="weather-info"></div>
+            <div id="error" class="error"></div>
+
+         
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+  .container{
+  h4{
+
+color: white;
+
+    width: 127px;
+height: 21px;
+top: 132px;
+left: 949px;
+gap: 0px;
+opacity: 0px;
+
+
+
+font-family: "Roboto";
+font-size: 18px;
+font-weight: 400;
+line-height: 21.09px;
+text-align: left;
+
+  }
+
+
+
+  h3{
+    width: 354px;
+height: 21px;
+gap: 0px;
+opacity: 0px;
+color: white;
+text-transform: uppercase;
+
+font-family: "Roboto";
+font-size: 18px;
+font-weight: 500;
+line-height: 21.09px;
+text-align: left;
+
+  }
+  }
+
+    </style>
+
+    <script src="app.js"></script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="city-name"></div>
+    <div id="temperature"></div>
+  
+    <div id="time"></div>
+    
+    <div class="app">
+        <video class="background-video" autoplay loop muted></video>
+        
+        <div class="container">
+            <div class="search-container">
+                <form id="weather-form">
+                    <input type="text" id="city" placeholder="Введите город" required>        
+                    <button type="submit">Получить погоду</button>
+
+                </form>
+
+                <div id="min-temperature"></div> 
+                <div id="max-temperature"></div> 
+
+            </div>
+            <div id="weather-info"></div>
+            <div id="error" class="error"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="city-name"></div>
+    <div id="temperature"></div>
+    <div id="time"></div>
+
+
+    
+    <div class="app">
+        <video class="background-video" autoplay loop muted></video>
+        
+        <div class="container">
+            <div class="search-container">
+                <form id="weather-form">
+                    <input type="text" id="city" placeholder="Введите город"required>        
+                    <button type="submit">Получить погоду</button>
+                </form>
+            </div>
+            <div id="weather-info"></div>
+            <div id="error" class="error"></div>
+
+          
+
+       
+        </div>
+    </div>
+
+
+  </div>
+
+            
+    <script src="app.js"></script>
+</body>
+</html> -->
