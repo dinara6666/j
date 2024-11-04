@@ -3,18 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прогноз погоды</title>
+    <title>Weather</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
+
+
+    <video class="background-video" autoplay loop muted>
+        <source src="./videos/blakc.mp4" type="video/mp4"> 
+        Ваш браузер не поддерживает видео.
+    </video>
+
     <div id="city-name"></div>
     <div id="temperature"></div>
     <div id="time"></div>
-  
+    <div id="day-number"></div> 
+   
+    <div id="temperature">
+        <span id="temp-value"></span>
+        <span id="temperature-number"></span> 
+    </div>
+    
 
 
+    <script>
+        const updateUI = (data) => {
+    const temp = data.main.temp;
+    const humidity = data.main.humidity;
+    const city = data.name;
 
+    document.getElementById('city-name').textContent = city;
+    document.getElementById('temp-value').textContent = `${Math.round(temp)}°`; 
+    document.getElementById('temperature-number').textContent = humidity; 
+    
+};
+
+    </script>
 
     
     <div class="app">
@@ -22,22 +48,92 @@
         
         <div class="container">
             <div class="search-container">
-                <form id="weather-form">
+                 <form id="weather-form">
+
+                    <div class="app">
+                      
+
+                        
+                        <div class="search-container">
+                                    
+                             
+                        <form id="weather-form">
+                                        <input type="text" id="city" placeholder="Search Location..." required>
+                                        <button type="submit" class="search-button">
+                                            
+                                      
+
+
+                    <style>
+                        body {
+                            /* font-family: "Ro */
+                        }
+                        body {
+                            font-family: "Roboto", sans-serif;
+                            background-color: #000;
+                            color: azure;
+                        }
+                        .search-container {
+                            position: relative;
+                           margin-bottom: 20px;
+                        }
+                        input {
+                            margin-bottom: -30px;
+                            
+                            /* padding: 10px 30px 10px 10px;  */
+                            border: none;
+                            border-radius: 5px; 
+                         
+                            background-color: transparent;
+                            color: #fff; 
+                            outline: none; 
+                            border-bottom: 2px solid rgba(255, 255, 255, 0.5); 
+                        }
+                        
+                        .search-button {
+                            /* position: absolute; */
+                            bottom: 20px;
+                           left: 20px;
+
+                           margin-left: 330px;
+                          
+                            right: -44px; 
+                            top: 50%;
+                            /* bottom: 10px; */
+                            transform: translateY(-50%);
+                            /* background: none;  */
+                            /* border: none;  */
+                            /* cursor: pointer;  */
+                        }
+                        .search-icon {
+                            width: 20px; 
+                            height: 20px; 
+                            
+                        }
+                    </style>
                 
-                     <input type="text" id="city" placeholder="Введите город" required> 
-                     <button type="submit" class="search-button">
-                        <img src="./videos/fa_search.svg" alt="Поиск" class="search-icon">
-                    </button>
+                
+                </head>
+                <body>
+                    
+                  
+                
+                
+                   
+                <img src="./videos/fa_search.svg" alt="Поиск" class="search-icon">
+                                
+                      
+                </button>
+                            
+                          
+                
+                    
                 </form>
-
-<style>
- .search-container img {
-    display: flex;
-    align-items: center; 
-}
-
-input {
-  
+                        
+                        
+                </div>
+                
+  <!-- .input{
     padding: 10px;
     margin-right: 5px;
     border: none; 
@@ -47,13 +143,17 @@ input {
     font-size: 16px; 
     color: #fff; 
     outline: none; 
+
+    margin-top: 250px;
 }
 
 .search-button {
-    margin-left: 350px;
+
+    /* margin-left: 300px; */
     background: none; 
     border: none; 
     cursor: pointer; 
+  
 }
 
 .search-icon {
@@ -62,7 +162,7 @@ input {
 }
 
 </style>
-
+  -->
 
 
 
@@ -177,7 +277,7 @@ margin-top:70px;
 
 
 
-
+ 
 
 
 
